@@ -1,0 +1,56 @@
+body {
+	text-align: center;	
+	margin: 1em;
+	background-image: url('obrazky/vzorcek.jpg');
+	background-repeat: repeat;
+	color: #ff6f8e;
+}
+
+#hra {
+	border: 1px solid rgb(111, 214, 255);
+	border-width: 2px;
+	border-radius: 5px;
+	position: relative;
+	width: 1080px;
+	height: 720px;
+	margin: 0 auto;
+	background: url('obrazky/sviece.jpg');
+	background-size: cover;
+}
+
+.nadpis{
+	background-color: rgb(111, 214, 255);
+	border-radius: 10px;
+	border-style: solid;
+	text-shadow: 2px 1px whitesmoke;;
+	padding: 15px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+img {
+	width: 160px;
+	height: 160px;
+	cursor: pointer;
+	border: 1px solid rgb(111, 214, 255);
+	border-radius: 5px;
+	border-width: 2px;
+	margin: 0 5px;
+}
+
+#hra > div {
+	position: relative;
+	display: inline-block;
+}
+
+#hra > div > span {
+	color: black;
+	font-weight: bold;
+	position: absolute;
+	left: 7px;
+	top: 2px;
+}
+
+#sprava {
+	color: red;
+}
