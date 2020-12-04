@@ -11,8 +11,8 @@ var Hra = {
     generuj: function(){
         var str = '';
         for (var i = 0; i < this.okienka.length; i++){
-            str += `<div><span id="${this.okienka[i]}" style='display: inline' style>${this.okienka[i]}</span><img src=obrazky/0.gif 
-            alt="${this.okienka[i]}" width="100" height="100" value="0" onclick="Hra.otoc(this)"></div>`;
+            str += `<div><span id="${this.okienka[i]}" style='display: inline'>${this.okienka[i]}</span><img src=obrazky/0.gif 
+            alt="${this.okienka[i]}" width="100" height="100" data-value="0" onclick="Hra.otoc(this)"></div>`;
         }
         document.getElementById('hra').innerHTML += str;
     },
@@ -23,15 +23,15 @@ var Hra = {
         var date = new Date();
         var den = date.getDate();
         if (parseInt(img.alt) <= den) {
-            if (img.value == '0'){
+            if (img.getAttribute('data-value') == '0'){
                 hudba.start();
                 img.src = `obrazky/${img.alt}.gif`;
-                img.value = "1";
+                img.setAttribute('data-value','1')
                 document.getElementById(`${img.alt}`).style = 'display: none'
                 document.getElementById('sprava').innerHTML = '&nbsp;';
             }else{
                 img.src = `obrazky/0.gif`;
-                img.value = "0"
+                img.setAttribute('data-value','0')
                 document.getElementById(`${img.alt}`).style = 'display: inline'
                 document.getElementById('sprava').innerHTML = '&nbsp;';
             }
